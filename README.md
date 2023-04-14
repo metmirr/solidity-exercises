@@ -8,10 +8,14 @@ The code examples are living in `src` directory. Each source file only covers on
 
 You need to install [foundry-rs](https://github.com/foundry-rs/foundry) to run tests.
 
-```bash
-# Run all tests with logs
-forge test -vvvv
+### Run all tests with logs
 
-# Run tests for a single contract: ArrayShift
+```bash
+forge test -vvvv
+```
+
+### Run tests for a single contract: ArrayShift
+
+```bash
 forge test --match-contract ArrayShift -vvvv
 ```
