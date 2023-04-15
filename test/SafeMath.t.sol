@@ -15,4 +15,8 @@ contract SafeMathTest is Test {
     function testFail_Underflow() public view {
         safeMath.underflow();
     }
+
+    function testUncheckedUnderflow() public view {
+        safeMath.uncheckedUnderflow();
+    }
 }
