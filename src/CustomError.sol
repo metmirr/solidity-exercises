@@ -7,11 +7,11 @@ pragma solidity ^0.8.18;
 //  - can be defined with parameters, just like events
 //  - should be used with `revert`, this might change in future
 contract CustomError {
-    uint public n;
+    uint256 public n;
 
-    error OutofRange(address caller, uint n);
+    error OutofRange(address caller, uint256 n);
 
-    function setN(uint _n) external {
+    function setN(uint256 _n) external {
         if (_n > 1_000_000) {
             revert OutofRange(msg.sender, _n);
         }

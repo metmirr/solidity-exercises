@@ -7,17 +7,17 @@ pragma solidity ^0.8.18;
 //
 // Think of swapping elements then popping the last element from the array
 contract ArrayReplaceLast {
-    uint[] public arr;
+    uint256[] public arr;
 
-    constructor(uint[] memory _arr) {
+    constructor(uint256[] memory _arr) {
         arr = _arr;
     }
 
-    function arrayLenght() public view returns (uint) {
+    function arrayLenght() public view returns (uint256) {
         return arr.length;
     }
 
-    function remove(uint _index) external {
+    function remove(uint256 _index) external {
         require(_index != arrayLenght());
 
         arr[_index] = arr[arrayLenght() - 1];

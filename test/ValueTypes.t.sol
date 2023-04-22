@@ -32,10 +32,10 @@ contract ValueTypesTest is Test {
     }
 
     function testMaxUint() public {
-        assertEq(valueTypes.MAX_UINT(), type(uint).max);
+        assertEq(valueTypes.MAX_UINT(), type(uint256).max);
     }
 
     function testMaxInt() public {
-        assertEq(valueTypes.MAX_INT(), type(int).max);
+        assertEq(valueTypes.MAX_INT(), type(int256).max);
     }
 }

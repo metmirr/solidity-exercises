@@ -11,7 +11,6 @@ pragma solidity ^0.8.19;
 //  - `view` functions don't modify the state but read from the state
 //  - `view` and `pure` can be use with `public` and `external`
 //
-
 contract Functions {
     function privateFunction() private {
         // code...
@@ -30,7 +29,7 @@ contract Functions {
         return true;
     }
 
-    function viewFunction() public view returns (uint) {
+    function viewFunction() public view returns (uint256) {
         // we are reading state
         return block.number;
     }

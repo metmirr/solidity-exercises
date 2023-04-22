@@ -17,9 +17,9 @@ contract ArrayReplaceLastTest is Test {
     }
 
     function testRemove() public {
-        uint beforeRemove = arrayReplaceLast.arrayLenght();
+        uint256 beforeRemove = arrayReplaceLast.arrayLenght();
         arrayReplaceLast.remove(1);
-        uint afterRemove = arrayReplaceLast.arrayLenght();
+        uint256 afterRemove = arrayReplaceLast.arrayLenght();
 
         assert(beforeRemove != afterRemove);
     }

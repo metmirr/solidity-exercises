@@ -12,11 +12,11 @@ pragma solidity ^0.8.19;
 
 contract ValueTypes {
     bool public b;
-    uint public u;
-    int public i;
+    uint256 public u;
+    int256 public i;
     address public a;
     bytes32 public byt;
 
-    uint public constant MAX_UINT = type(uint).max;
-    int public constant MAX_INT = type(int).max;
+    uint256 public constant MAX_UINT = type(uint256).max;
+    int256 public constant MAX_INT = type(int256).max;
 }

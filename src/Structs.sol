@@ -7,7 +7,7 @@ pragma solidity ^0.8.19;
 contract Structs {
     struct Car {
         string model;
-        uint year;
+        uint256 year;
         address owner;
     }
 
@@ -20,11 +20,7 @@ contract Structs {
     function createCars() external {
         // Cars in memory will go away when the function is done
         Car memory toyota = Car("toyota", 2020, msg.sender);
-        Car memory lambo = Car({
-            model: "lamborghini",
-            owner: msg.sender,
-            year: 2023
-        });
+        Car memory lambo = Car({model: "lamborghini", owner: msg.sender, year: 2023});
         // uninitialized Car - all fields are set to their default value
         Car memory tesla;
         // tesla.model - is empty string

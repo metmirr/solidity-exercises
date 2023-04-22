@@ -4,11 +4,11 @@ pragma solidity ^0.8.19;
 // One way to implement iterable mappings in Solidity is by using an array to store the keys
 // in the order they were added to the mapping.
 contract IterableMapping {
-    mapping(address => uint) public balances;
+    mapping(address => uint256) public balances;
     mapping(address => bool) public inserted;
     address[] public keys;
 
-    function set(address _key, uint _val) external {
+    function set(address _key, uint256 _val) external {
         balances[_key] = _val;
 
         if (!inserted[_key]) {
@@ -17,16 +17,16 @@ contract IterableMapping {
         }
     }
 
-    function getSize() external view returns (uint) {
+    function getSize() external view returns (uint256) {
         return keys.length;
     }
 
-    function getKeyAtIndex(uint _index) external view returns (address) {
+    function getKeyAtIndex(uint256 _index) external view returns (address) {
         require(_index < keys.length);
         return keys[_index];
     }
 
-    function get(uint _index) external view returns (uint) {
+    function get(uint256 _index) external view returns (uint256) {
         require(_index < keys.length);
         return balances[keys[_index]];
     }

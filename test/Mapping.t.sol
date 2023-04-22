@@ -16,9 +16,9 @@ contract MappingTest is Test {
     }
 
     function testSetBalance() public {
-        uint amount = 123;
+        uint256 amount = 123;
         m.setBalance(amount);
-        uint currentBalance = m.getBalance();
+        uint256 currentBalance = m.getBalance();
 
         assertEq(amount, currentBalance);
     }
@@ -29,19 +29,19 @@ contract MappingTest is Test {
     }
 
     function testUpdateBalance() public {
-        uint balanceBeforeUpdate = m.getBalance();
+        uint256 balanceBeforeUpdate = m.getBalance();
         m.updateBalance(456);
-        uint balanceAfterUpdate = m.getBalance();
+        uint256 balanceAfterUpdate = m.getBalance();
 
         assert(balanceAfterUpdate != balanceBeforeUpdate);
     }
 
     function testDeleteBalance() public {
         m.setBalance(123);
-        uint balance = m.getBalance();
+        uint256 balance = m.getBalance();
 
         m.deleteBalance();
-        uint newBalance = m.getBalance();
+        uint256 newBalance = m.getBalance();
 
         assert(balance != newBalance);
     }
