@@ -11,19 +11,19 @@ pragma solidity ^0.8.19;
 // * `calldata` is immutable
 contract DataLocations {
     struct MyStruct {
-        uint foo;
+        uint256 foo;
         string text;
     }
 
     mapping(address => MyStruct) public myStructs;
 
     // gas 45419
-    function createMyStructMemory(uint _foo, string memory _text) external {
+    function createMyStructMemory(uint256 _foo, string memory _text) external {
         myStructs[msg.sender] = MyStruct(_foo, _text);
     }
 
     // gas 45338
-    function createMyStructCalldata(uint _foo, string calldata _text) external {
+    function createMyStructCalldata(uint256 _foo, string calldata _text) external {
         myStructs[msg.sender] = MyStruct(_foo, _text);
     }
 
@@ -47,18 +47,18 @@ contract DataLocations {
     }
 
     // 800
-    function setArrayMemory(uint[] memory _arr) external {
+    function setArrayMemory(uint256[] memory _arr) external {
         // This function call will copy all the items from `_arr`
         _internalMemory(_arr);
     }
 
     // gas 463
-    function setArrayCalldata(uint[] calldata _arr) external {
+    function setArrayCalldata(uint256[] calldata _arr) external {
         // No copy - cheaper
         _internalCalldata(_arr);
     }
 
-    function _internalMemory(uint[] memory arr) private {}
+    function _internalMemory(uint256[] memory arr) private {}
 
-    function _internalCalldata(uint[] calldata arr) private {}
+    function _internalCalldata(uint256[] calldata arr) private {}
 }

@@ -28,13 +28,13 @@ contract DataLocationsTest is Test {
     }
 
     function testSetArrayMemory() public {
-        uint[] memory arr = new uint[](3);
+        uint256[] memory arr = new uint[](3);
         arr[0] = 1;
         dataLocations.setArrayMemory(arr);
     }
 
     function testSetArrayCalldata() public {
-        uint[] memory arr = new uint[](3);
+        uint256[] memory arr = new uint[](3);
         arr[0] = 1;
         dataLocations.setArrayCalldata(arr);
     }
