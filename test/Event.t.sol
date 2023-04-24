@@ -6,6 +6,7 @@ import {Event} from "../src/Event.sol";
 
 contract EventTest is Test {
     Event public e;
+
     event Log(string message, uint256 val);
     event IndexedLog(address indexed sender, uint256 val);
 

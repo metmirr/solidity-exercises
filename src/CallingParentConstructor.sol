@@ -26,9 +26,7 @@ contract T {
 // 1. S
 // 2. T
 // 3. V0
-contract V0 is S("s"), T("t") {
-
-}
+contract V0 is S("s"), T("t") {}
 
 // The order of constructor will be `S`, `T`. Even if we call `T`'s constructor first in the
 // contract defination it won't matter the calling order will be `S` first then `T`
